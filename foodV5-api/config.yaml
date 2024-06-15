@@ -1,0 +1,111 @@
+server:
+  # http监听地址
+  host: "0.0.0.0"
+  # http监听端口
+  port: 9999
+  # http优雅关闭等待超时时长(单位秒)
+  shutdown_timeout: 180
+  # 允许的最大内容长度(64M)
+  max_content_length: 67108864
+  # 允许输出的最大请求日志长度
+  max_req_logger_length: 1024
+  # 是否关闭
+  is_close: false
+  # 关站信息
+  close_message: "系统维护暂不支持访问"
+
+gorm:
+  # 是否开启调试模式
+  debug: true
+  # 数据库类型
+  db_type: "mysql"
+  # 设置连接可以重用的时长（单位：秒）
+  max_lifetime: 7200
+  # 设置数据库的最大连接数
+  max_open_conns: 200
+  # 设置空闲连接池中的最大连接数
+  max_idle_conns: 200
+  # 数据库表名前缀
+  table_prefix: "lit_"
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  password: ""
+  db_name: "foodv5"
+  # 连接参数
+  parameters: "charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
+
+redis:
+  # 地址
+  addr: "127.0.0.1:6379"
+  # 密码
+  password: ""
+  # 数据库
+  database: 0
+  # 最小空闲连接
+  max_idle: 10
+  # 空闲超时
+  idle_timeout: 60
+
+cors:
+  # 是否启用
+  enable: true
+  # 允许跨域请求的域名列表(*表示全部允许)
+  allow_origins: [ "*" ]
+  # 允许跨域请求的请求方式列表
+  allow_methods: [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+  # 允许客户端与跨域请求一起使用的非简单标头的列表
+  allow_headers: [ "*" ]
+  # 请求是否可以包含cookie，HTTP身份验证或客户端SSL证书等用户凭据
+  allow_credentials: true
+  # 可以缓存预检请求结果的时间（以秒为单位）
+  max_age: 7200
+
+jwt:
+  # key配置
+  key: "litworke"
+  token_prefix: "syk_user_"
+# 小程序配置,例如支付,小程序appid啥的
+wechat_mini:
+  app_id: "wx74991ba57fc0604f"
+  app_secret: "9e6c0c22b0ecf9ee03ad4c4fc9289840"
+  # 这里配置支付的信息
+  mch_id: "1652411832"
+  mch_key: "yanyu3302984585lixianglonglovexd"
+  mch_number: "30F3A4A19BC4658CF65D138975422121CF86F406"
+  private_key: "/Users/litworke/cert/1652411832_20231016_cert/apiclient_key.pem"
+  domain: "http://gzhkf.mmchole.cn" # 这里是请求主机，默认自己
+
+wechat_officialaccount:
+  app_id: "wx3d20ee1625845664"
+  app_secret: "28a0e0a52b7f9334ae80f6b89a7fe653"
+  token: "litworke"
+  mch_id: "1652411832"
+  mch_key: "yanyu3302984585lixianglonglovexd"
+  mch_number: "30F3A4A19BC4658CF65D138975422121CF86F406"
+  private_key: "/Users/litworke/cert/1652411832_20231016_cert/apiclient_key.pem"
+  domain: "" # 这里是请求主机，默认自己
+log:
+  # 日志保存文件路径
+  filename: "./log"
+  # 日志文件大小，单位是 MB
+  max_size: 10
+  # 保留的日志文件数量
+  max_backups: 3
+  # 日志文件的最长保留时间，单位是天
+  max_age: 28
+  #日志文件是否需要压缩
+  compress: true
+  # 日志保存时间格式
+  time_format: "2006/01/02/15"
+# 上传啥的,文件规范
+file:
+  upload_dir: "./uploads/"
+  upload_max_size: 5242880000
+  upload_allow_files: [".png", ".jpg", ".jpeg", ".gif",".svg",
+                       ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+                       ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+                       ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+                       ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml", ".dat"]
