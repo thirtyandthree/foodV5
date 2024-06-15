@@ -66,26 +66,28 @@ cors:
 jwt:
   # key配置
   key: "litworke"
+  # jwt的前缀
   token_prefix: "syk_user_"
 # 小程序配置,例如支付,小程序appid啥的
 wechat_mini:
-  app_id: "wx74991ba57fc0604f"
-  app_secret: "9e6c0c22b0ecf9ee03ad4c4fc9289840"
+  app_id: ""
+  app_secret: ""
   # 这里配置支付的信息
-  mch_id: "1652411832"
-  mch_key: "yanyu3302984585lixianglonglovexd"
-  mch_number: "30F3A4A19BC4658CF65D138975422121CF86F406"
-  private_key: "/Users/litworke/cert/1652411832_20231016_cert/apiclient_key.pem"
-  domain: "http://gzhkf.mmchole.cn" # 这里是请求主机，默认自己
+  mch_id: ""
+  mch_key: ""
+  mch_number: ""
+  # 私钥路径
+  private_key: ""
+  domain: "" # 这里是请求主机，默认自己
 
 wechat_officialaccount:
-  app_id: "wx3d20ee1625845664"
-  app_secret: "28a0e0a52b7f9334ae80f6b89a7fe653"
-  token: "litworke"
-  mch_id: "1652411832"
-  mch_key: "yanyu3302984585lixianglonglovexd"
-  mch_number: "30F3A4A19BC4658CF65D138975422121CF86F406"
-  private_key: "/Users/litworke/cert/1652411832_20231016_cert/apiclient_key.pem"
+  app_id: ""
+  app_secret: ""
+  token: ""
+  mch_id: ""
+  mch_key: ""
+  mch_number: ""
+  private_key: ""
   domain: "" # 这里是请求主机，默认自己
 log:
   # 日志保存文件路径
